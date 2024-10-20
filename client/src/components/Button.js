@@ -1,20 +1,30 @@
 import React from "react";
 
-const Button = ({ title, variant = "contained", color = "primary" }) => {
-  const className = "";
-  if (varient === "contained") {
-    className += "bg-" + color + "text-white";
-  } else if (variant === "outlined") {
-    className += "border-" + color + "text-" + color;
+function Button({
+  title,
+  variant = "contained",
+  color = "primary",
+  type = "button",
+  onClick,
+  fullWidth = false,
+  disabled
+}) {
+  let className = fullWidth ? "w-100 rounded " : "pr-2 pl-2 rounded ";
+  if (variant === "contained" && !disabled) {
+    className += "bg-" + color + " text-white";
+  } else if (variant === "outlined" && !disabled) {
+    className += "border-" + color + " text-" + color;
+  }
+
+  if (disabled) {
+    className += "disabled-btn";
   }
 
   return (
-    <button
-      className={`${
-        variant === "contained" ? "bg-" : "border-"
-      }${color} text-white px-4 py-2 rounded-md`}
-    ></button>
+    <button className={className} type={type} onClick={onClick}>
+      {title}
+    </button>
   );
-};
+}
 
 export default Button;
