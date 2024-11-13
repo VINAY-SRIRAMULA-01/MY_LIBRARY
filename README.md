@@ -7,8 +7,7 @@
 To set up this project locally, follow these steps:
 
 1. **Clone the repository:**
-   ```
-   git clone https://github.com/yourusername/MY_LIBRARY.git
+   ```https://github.com/VINAY-SRIRAMULA-01/MY_LIBRARY
    ```
 
 2. **Navigate to the project directory:**
